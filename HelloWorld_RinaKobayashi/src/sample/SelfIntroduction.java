@@ -17,8 +17,6 @@ public class SelfIntroduction {
 		// これはコメントです
 		/* これもコメントです */
 		
-		System.out.println("こんにちは");
-		
 	}
 
 }
