@@ -127,8 +127,62 @@ public class Qes1_13 {
 		System.out.println("-----問題７-----");
 		
 		System.out.println("BMIは" + (weight / height / height) + "です");
+		
+		
+		/*
+		 【問題８】
+		  6で宣言した変数に再代入し下記の通りコンソールに出力してください
+			　初めまして鈴木一郎です
+			　年齢は24歳です
+			　身長168.5cmです
+			　体重は64.2kgです
+			　好きな食べ物はオムライスです
+			　BMIは22.6です
+		 【問題９】
+		  8で使用した変数【年齢・身長・体重】の数値を和算で自己代入し、下記の通りコンソールに出力してください
+			　初めまして鈴木一郎です
+			　年齢は48歳です
+			　身長337.0cmです
+			　体重は128.4kgです
+			　好きな食べ物はオムライスです
+			　BMIは11.31です
+		 */
+		
+		System.out.println("-----問題８～９-----");
+		
+		name = "鈴木一郎";
+		age = 24 * 2;
+		height = 168.5 * 2;
+		weight = 64.2 * 2;
+		food = "オムライス";
+		
+		//BMIを小数点第2位まで表示する
+		double bmi = weight / height / height * 1000000;
+		bmi = Math.round(bmi);
+		bmi /= 100;
+		
 
-
+		System.out.println("初めまして" + name + "です");
+		System.out.println("年齢は" + age + "歳です");
+		System.out.println("身長は" + height + "cmです");
+		System.out.println("体重は" + weight + "kgです");
+		System.out.println("好きな食べ物は" + food + "です");
+		System.out.println("BMIは" + bmi + "です");
+		
+		
+		/*
+		 【問題１０】
+		  8で使用した年齢が25歳以上ならtrueが出力されるようにしてください。ただしif文は使いません
+		 */
+		
+		System.out.println("-----問題１０-----");	
+		
+		//問題９で自己代入をしているため、下記に再度変数を定義
+		age = 24;
+		
+		boolean ageCheck = age >= 25;
+		System.out.println(ageCheck);
+	
 	}
 
 }
