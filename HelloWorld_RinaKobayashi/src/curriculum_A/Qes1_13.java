@@ -138,6 +138,30 @@ public class Qes1_13 {
 			　体重は64.2kgです
 			　好きな食べ物はオムライスです
 			　BMIは22.6です
+		 */
+		
+		System.out.println("-----問題８-----");
+		
+		name = "鈴木一郎";
+		age = 24;
+		height = 168.5;
+		weight = 64.2;
+		food = "オムライス";
+		
+		//BMIを小数点第2位まで表示する
+		double bmi = weight / height / height * 100000; //小数点第2位までを整数とする
+		bmi = Math.round(bmi); //小数点以下を切り捨てる
+		bmi /= 10; //22.6にするため10で割る
+
+		System.out.println("初めまして" + name + "です");
+		System.out.println("年齢は" + age + "歳です");
+		System.out.println("身長は" + height + "cmです");
+		System.out.println("体重は" + weight + "kgです");
+		System.out.println("好きな食べ物は" + food + "です");
+		System.out.println("BMIは" + bmi + "です");
+	
+		
+		/*
 		 【問題９】
 		  8で使用した変数【年齢・身長・体重】の数値を和算で自己代入し、下記の通りコンソールに出力してください
 			　初めまして鈴木一郎です
@@ -146,26 +170,25 @@ public class Qes1_13 {
 			　体重は128.4kgです
 			　好きな食べ物はオムライスです
 			　BMIは11.31です
-		 */
+		*/
+
 		
-		System.out.println("-----問題８～９-----");
-		
-		name = "鈴木一郎";
-		age = 24 * 2;
-		height = 168.5 * 2;
-		weight = 64.2 * 2;
-		food = "オムライス";
+		System.out.println("-----問題９-----");
+
+		int ageAfter = age * 2;
+		double heightAfter = height * 2;
+		double weightAfter = weight * 2;
 		
 		//BMIを小数点第2位まで表示する
-		double bmi = weight / height / height * 1000000;
-		bmi = Math.round(bmi);
-		bmi /= 100;
+		bmi = weightAfter / heightAfter / heightAfter * 1000000; //小数点第2位までを整数とする
+		bmi = Math.round(bmi); //小数点以下を切り捨てる
+		bmi /= 100; //11.31にするため100で割る
 		
 
 		System.out.println("初めまして" + name + "です");
-		System.out.println("年齢は" + age + "歳です");
-		System.out.println("身長は" + height + "cmです");
-		System.out.println("体重は" + weight + "kgです");
+		System.out.println("年齢は" + ageAfter + "歳です");
+		System.out.println("身長は" + heightAfter + "cmです");
+		System.out.println("体重は" + weightAfter + "kgです");
 		System.out.println("好きな食べ物は" + food + "です");
 		System.out.println("BMIは" + bmi + "です");
 		
@@ -183,6 +206,44 @@ public class Qes1_13 {
 		boolean ageCheck = age >= 25;
 		System.out.println(ageCheck);
 	
+		
+		/*
+		 【問題１１】
+		  8で使用した【年齢・身長・体重】を文字列型に型変換し繋げて出力してください
+		 */
+		
+		System.out.println("-----問題１１-----");	
+		
+		String ageText = age + "";
+		String heightText = height + "";
+		String weightText = weight + "";
+		
+		System.out.println(ageText + " " + heightText + " " + weightText);
+		
+		
+		/*
+		 【問題１２】
+		  11で変換した【年齢・身長】を整数型に変換して出力してください
+		 */
+		
+		System.out.println("-----問題１２-----");	
+		
+		int ageInt = Integer.parseInt(ageText); //String to int
+		System.out.println(ageInt);
+		
+		int heightInt = (int) height; //double to int
+		System.out.println(heightInt);
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 }
