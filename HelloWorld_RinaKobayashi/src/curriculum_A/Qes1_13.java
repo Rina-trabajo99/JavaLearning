@@ -12,10 +12,34 @@ public class Qes1_13 {
 			・単精度浮動小数点数型・倍精度浮動小数点数型
 			・文字型・文字列型
 			・ブーリアン型
-
-		 【問題２】
-		　それぞれのローカル変数をローカル内でそれぞれの初期値を代入し初期化してください
+		*/
 		
+		byte itsByte;
+		short itsShort;
+		int itsInt;
+		long itsLong;
+		float itsFloat;
+		double itsDouble;
+		char itsChar;
+		String itsString;
+		boolean itsBoolean;	
+		
+
+		/*【問題２】
+		　それぞれのローカル変数をローカル内でそれぞれの初期値を代入し初期化してください
+		*/
+		
+		itsByte = 1;
+		itsShort = 1;
+		itsInt = 1;
+		itsLong = 1l;
+		itsFloat = 1.5f;
+		itsDouble = 1.5;
+		itsChar = 'A';
+		itsString = "Hello World";
+		itsBoolean = false;
+		
+		/*
 		 【問題３】
 		  初期化をしたそれぞれの変数に下記の値を代入してください					
 			・バイト型：10			
@@ -30,23 +54,23 @@ public class Qes1_13 {
 		 */
 	
 		//バイト型
-		byte Byte = 10;
+		itsByte = 10;
 		//短整数型
-		short Short = 100;
+		itsShort = 100;
 		//整数型
-		int Int = 1000;
+		itsInt = 1000;
 		//長整数型
-		long Long = 10000;
+		itsLong = 10000l;
 		//単精度浮動小数点型
-		float Float = 9.5F;
+		itsFloat = 9.5f;
 		//倍精度浮動小数点型
-		double Double = 10.5;
+		itsDouble = 10.5;
 		//文字型
-		char Char = 'a';
+		itsChar = 'a';
 		//文字列型
-		String String = "ハロー";
+		itsString = "ハロー";
 		//ブーリアン型(真偽値)
-		boolean Boolean = true;
+		itsBoolean = true;
 		
 		
 		/*
@@ -64,12 +88,12 @@ public class Qes1_13 {
 		
 		System.out.println("-----問題４-----");		
 		
-		System.out.println(Byte + Short + Int + Long);
-		System.out.println(Byte + Byte);
-		System.out.println(Char +  String +  Boolean);
-		System.out.println(Byte * Short * Int * Long);
-		System.out.println(10.5 / 100);
-		System.out.println(10 - 100);
+		System.out.println(itsByte + itsShort + itsInt + itsLong);
+		System.out.println(itsByte + itsByte);
+		System.out.println(itsChar +  itsString +  itsBoolean);
+		System.out.println(itsByte * itsShort * itsInt * itsLong);
+		System.out.println(itsDouble / itsShort);
+		System.out.println(itsByte - itsShort);
 		
 		
 		/*
@@ -85,6 +109,7 @@ public class Qes1_13 {
 		
 		int num1 = 2000;
 		int num2 = 23;
+		
 		System.out.println("ハローJAVA" + (num1 + num2));
 		
 		
@@ -148,17 +173,16 @@ public class Qes1_13 {
 		weight = 64.2;
 		food = "オムライス";
 		
-		//BMIを小数点第2位まで表示する
-		double bmi = weight / height / height * 100000; //小数点第2位までを整数とする
-		bmi = Math.round(bmi); //小数点以下を切り捨てる
-		bmi /= 10; //22.6にするため10で割る
+		//BMIを計算する
+		double heightM = height / 100;
+		double bmi1 = weight / (heightM * heightM);
 
 		System.out.println("初めまして" + name + "です");
 		System.out.println("年齢は" + age + "歳です");
 		System.out.println("身長は" + height + "cmです");
 		System.out.println("体重は" + weight + "kgです");
 		System.out.println("好きな食べ物は" + food + "です");
-		System.out.println("BMIは" + bmi + "です");
+		System.out.println("BMIは" + (String.format("%.1f", bmi1)) + "です");
 	
 		
 		/*
@@ -179,18 +203,17 @@ public class Qes1_13 {
 		double heightAfter = height * 2;
 		double weightAfter = weight * 2;
 		
-		//BMIを小数点第2位まで表示する
-		bmi = weightAfter / heightAfter / heightAfter * 1000000; //小数点第2位までを整数とする
-		bmi = Math.round(bmi); //小数点以下を切り捨てる
-		bmi /= 100; //11.31にするため100で割る
-		
+		//BMIを計算する
+		double heightAfterM = heightAfter / 100;
+		double bmi2 = weightAfter / (heightAfterM * heightAfterM);
 
+		
 		System.out.println("初めまして" + name + "です");
 		System.out.println("年齢は" + ageAfter + "歳です");
 		System.out.println("身長は" + heightAfter + "cmです");
 		System.out.println("体重は" + weightAfter + "kgです");
 		System.out.println("好きな食べ物は" + food + "です");
-		System.out.println("BMIは" + bmi + "です");
+		System.out.println("BMIは" + (String.format("%.2f", bmi2)) + "です");
 		
 		
 		/*
@@ -214,9 +237,9 @@ public class Qes1_13 {
 		
 		System.out.println("-----問題１１-----");	
 		
-		String ageText = age + "";
-		String heightText = height + "";
-		String weightText = weight + "";
+		String ageText = Integer.toString(age);
+		String heightText = String.valueOf(height);
+		String weightText = String.valueOf(weight);
 		
 		System.out.println(ageText + " " + heightText + " " + weightText);
 		
@@ -234,7 +257,15 @@ public class Qes1_13 {
 		int heightInt = (int) height; //double to int
 		System.out.println(heightInt);
 
+		/*
+		 【問題１３】
+		  12で変換した【年齢・身長】で【年齢が25もしくは身長が160以上】であればtrueを出力してください
+		　ただしif文は使わないでください
+		 */	
+		System.out.println("-----問題１３-----");	
 		
+		boolean condition = ageInt >= 25 || heightInt >= 160;
+		System.out.println(condition);
 		
 		
 		
