@@ -29,14 +29,16 @@ public class Qes1_13 {
 		　それぞれのローカル変数をローカル内でそれぞれの初期値を代入し初期化してください
 		*/
 		
-		itsByte = 1;
-		itsShort = 1;
-		itsInt = 1;
-		itsLong = 1l;
-		itsFloat = 1.5f;
-		itsDouble = 1.5;
-		itsChar = 'A';
-		itsString = "Hello World";
+		//★訂正
+		
+		itsByte = 0;
+		itsShort = 0;
+		itsInt = 0;
+		itsLong = 0l;
+		itsFloat = 0.0f;
+		itsDouble = 0.0d;
+		itsChar = '\u0000';
+		itsString = null;
 		itsBoolean = false;
 		
 		/*
@@ -104,10 +106,12 @@ public class Qes1_13 {
 			　int num1=23;
 			　System.out.println("ハローJAVA"+(num+num1));
 		*/
+		
+		//★訂正
 
 		System.out.println("-----問題５-----");		
 		
-		int num1 = 2000;
+		int num1 = 20;
 		int num2 = 23;
 		
 		System.out.println("ハローJAVA" + (num1 + num2));
@@ -149,9 +153,16 @@ public class Qes1_13 {
 		  ただし計算は数値を直書きせず、全て変数を使ってすること
 		 */
 		
+		//★訂正
+		
 		System.out.println("-----問題７-----");
 		
-		System.out.println("BMIは" + (weight / height / height) + "です");
+		double heightMeter = height / 100;
+		double bmi = (weight / (heightMeter * heightMeter)) * 100; //小数点第2位までを整数にする
+		bmi = (int)bmi;
+		bmi = bmi / 100;
+		
+		System.out.println("BMIは" + bmi + "です");
 		
 		
 		/*
@@ -165,6 +176,7 @@ public class Qes1_13 {
 			　BMIは22.6です
 		 */
 		
+		//★訂正
 		System.out.println("-----問題８-----");
 		
 		name = "鈴木一郎";
@@ -174,15 +186,18 @@ public class Qes1_13 {
 		food = "オムライス";
 		
 		//BMIを計算する
-		double heightM = height / 100;
-		double bmi1 = weight / (heightM * heightM);
+		heightMeter = height / 100;
+		bmi = (weight / (heightMeter * heightMeter)) * 10;
+		bmi = (int)bmi;
+		bmi = bmi / 10;
+
 
 		System.out.println("初めまして" + name + "です");
 		System.out.println("年齢は" + age + "歳です");
 		System.out.println("身長は" + height + "cmです");
 		System.out.println("体重は" + weight + "kgです");
 		System.out.println("好きな食べ物は" + food + "です");
-		System.out.println("BMIは" + (String.format("%.1f", bmi1)) + "です");
+		System.out.println("BMIは" + bmi + "です");
 	
 		
 		/*
@@ -195,25 +210,28 @@ public class Qes1_13 {
 			　好きな食べ物はオムライスです
 			　BMIは11.31です
 		*/
-
+		
+		//★訂正
 		
 		System.out.println("-----問題９-----");
-
-		int ageAfter = age * 2;
-		double heightAfter = height * 2;
-		double weightAfter = weight * 2;
+		
+		//自己代入
+		age += age;
+		height += height;
+		weight += weight;
 		
 		//BMIを計算する
-		double heightAfterM = heightAfter / 100;
-		double bmi2 = weightAfter / (heightAfterM * heightAfterM);
+		heightMeter = height / 100;
+		bmi = (weight / (heightMeter * heightMeter)) * 1000;
+		bmi = bmi / 1000;
 
 		
 		System.out.println("初めまして" + name + "です");
-		System.out.println("年齢は" + ageAfter + "歳です");
-		System.out.println("身長は" + heightAfter + "cmです");
-		System.out.println("体重は" + weightAfter + "kgです");
+		System.out.println("年齢は" + age + "歳です");
+		System.out.println("身長は" + height + "cmです");
+		System.out.println("体重は" + weight + "kgです");
 		System.out.println("好きな食べ物は" + food + "です");
-		System.out.println("BMIは" + (String.format("%.2f", bmi2)) + "です");
+		System.out.println("BMIは" + String.format("%.2f",bmi) + "です");
 		
 		
 		/*
