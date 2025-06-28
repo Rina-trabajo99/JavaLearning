@@ -7,7 +7,6 @@ public class Qes1_3 {
 
 	public static void main(String[] args) {
 		// TODO 自動生成されたメソッド・スタブ
-		
 		//【問1&2】
 		
 		System.out.println("-----問1&問2-----");
@@ -98,7 +97,6 @@ public class Qes1_3 {
 		}
 		
 		System.out.println("勝つまでにかかった合計回数は" + playCount + "回です");
-				
 	}
 
 }
