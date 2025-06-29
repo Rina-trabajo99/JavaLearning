@@ -43,7 +43,7 @@ public class Qes1_3 {
 		//条件の設定
 			playCount++;
 			System.out.println("ユーザー名「" + name + "」を登録しました");
-			System.out.println("じゃんけんしましょう");
+			System.out.println("じゃんけんしましょう！");
 			System.out.print("数値を入れてください。「0はグー、1：チョキ、2：パー」です。");
 			int userChoose = sc2.nextInt();
 			String userHands = hands[userChoose];

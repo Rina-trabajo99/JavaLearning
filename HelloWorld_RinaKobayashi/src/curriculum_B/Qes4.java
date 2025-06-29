@@ -13,8 +13,10 @@ public class Qes4 {
 		
 		while(i < firstNum.length) {
 			for(int j = 0; j < secondNum.length; j++) {
+				String firstZero = String.format("%02d", firstNum[i]);
+				String secondZero = String.format("%02d", secondNum[j]);
 				String result = String.format("%02d", firstNum[i] * secondNum[j]);
-				System.out.print(("0" + firstNum[i] + " ＊ 0" + secondNum[j] + " = ") + result + "||");
+				System.out.print((firstZero + " ＊ " + secondZero + " = ") + result + " || ");
 			}
 			System.out.println(" ");
 			i++;
