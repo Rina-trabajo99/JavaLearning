@@ -10,10 +10,6 @@ public class Qes7 {
 		//問7
 		System.out.println("-----問7-----");
 		Scanner sc = new Scanner(System.in);
-		Scanner eng = new Scanner(System.in);
-		Scanner math = new Scanner(System.in);
-		Scanner science = new Scanner(System.in);
-		Scanner society = new Scanner(System.in);
 		
 		//生徒数
 		System.out.print("生徒の人数を入力してください(2以上)：");
@@ -29,16 +25,16 @@ public class Qes7 {
 		//個人の各教科の点数
 		for(int i = 1; i <= ppl; i++) {
 			System.out.print(i + "人目の『英語』の点数を入力してください：");
-			int engPoints = eng.nextInt();
+			int engPoints = sc.nextInt();
 			engArray[j] = engPoints;
 			System.out.print(i + "人目の『数学』の点数を入力してください：");
-			int mathPoints = math.nextInt();
+			int mathPoints = sc.nextInt();
 			mathArray[j] = mathPoints;
 			System.out.print(i + "人目の『理科』の点数を入力してください：");
-			int sciencePoints = science.nextInt();
+			int sciencePoints = sc.nextInt();
 			scienceArray[j] = sciencePoints;
 			System.out.print(i + "人目の『社会』の点数を入力してください：");
-			int societyPoints = society.nextInt();
+			int societyPoints = sc.nextInt();
 			societyArray[j] = societyPoints;
 			System.out.println();
 			j++;
