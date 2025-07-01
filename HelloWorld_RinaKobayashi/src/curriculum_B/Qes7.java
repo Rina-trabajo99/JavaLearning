@@ -39,6 +39,8 @@ public class Qes7 {
 			System.out.println();
 			j++;
 		}
+		
+		sc.close();
 			
 		//4教科の平均点
 		for(int k = 0; k < engArray.length; k++) {

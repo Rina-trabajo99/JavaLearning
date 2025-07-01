@@ -55,14 +55,13 @@ public class Qes1_3 {
 			String[] hands = {"グー", "チョキ", "パー"};
 			
 			//userのじゃんけん処理
-			Scanner sc2 = new Scanner(System.in);
-			int userChoose = sc2.nextInt();
+			int userChoose = sc1.nextInt();
 			String userHands = hands[userChoose];
 			System.out.println(name + "の手は「" + userHands + "」" );
 			
 			//pc側のじゃんけん処理
 			Random pcChoose = new Random();
-			String pcHands = hands[pcChoose.nextInt(2)];
+			String pcHands = hands[pcChoose.nextInt(3)];
 			System.out.println("相手の手は「" + pcHands + "」");
 			
 			//スペース
@@ -71,9 +70,9 @@ public class Qes1_3 {
 		//条件分岐
 		 switch(userChoose) {
 			case 0: //userが「グー」を選んだ場合
-				if(pcHands == hands[0]) {   //pcが「グー」を選んだ場合
+				if(pcHands.equals(hands[0])) {   //pcが「グー」を選んだ場合
 					System.out.println("DRAW あいこ もう一回しましょう！");
-				}else if(pcHands == hands[1]) {   //pcが「チョキ」を選んだ場合
+				}else if(pcHands.equals(hands[1])) {   //pcが「チョキ」を選んだ場合
 					System.out.println("やるやん。");
 					System.out.println("次は俺にリベンジさせて");
 					win = true;
@@ -84,11 +83,11 @@ public class Qes1_3 {
 				}
 				break;
 			case 1: //userが「チョキ」を選んだ場合
-				if(pcHands == hands[0]) {  //pcが「グー」を選んだ場合
+				if(pcHands.equals(hands[0])) {  //pcが「グー」を選んだ場合
 					System.out.println("俺の勝ち！");
 					System.out.println("負けは次につながるチャンスです！");
 					System.out.println("ネバーギブアップ！");
-				} else if(pcHands == hands[1]) {  //pcが「チョキ」を選んだ場合
+				} else if(pcHands.equals(hands[1])) {  //pcが「チョキ」を選んだ場合
 					System.out.println("DRAW あいこ もう一回しましょう！");					
 				} else {  //pcが「パー」を選んだ場合
 					System.out.println("やるやん。");
@@ -97,11 +96,11 @@ public class Qes1_3 {
 				}
 				break;
 			case 2: //userが「パー」を選んだ場合
-				if(pcHands == hands[0]) {  //pcが「グー」を選んだ場合
+				if(pcHands.equals(hands[0])) {  //pcが「グー」を選んだ場合
 					System.out.println("やるやん。");
 					System.out.println("次は俺にリベンジさせて");
 					win = true;
-				} else if(pcHands == hands[1]) { //pcが「チョキ」を選んだ場合
+				} else if(pcHands.equals(hands[1])) { //pcが「チョキ」を選んだ場合
 					System.out.println("俺の勝ち！");
 					System.out.println("たかがじゃんけん、そう思ってないですか？");
 					System.out.println("それやったら次も、俺が勝ちますよ");
@@ -111,6 +110,7 @@ public class Qes1_3 {
 				}
 			}
 		
+		sc1.close();
 		System.out.println("勝つまでにかかった合計回数は" + playCount + "回です");
 	}
 

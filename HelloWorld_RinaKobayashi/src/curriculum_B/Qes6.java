@@ -19,8 +19,10 @@ public class Qes6 {
 		System.out.print("→");
 		Scanner sc = new Scanner(System.in);
 		String search = sc.nextLine();
-
+		sc.close();
 		String[] productList = search.split("、");
+		
+
 		
 		for(String bucle : productList) {
 			int tvdispAmount = 11;
@@ -51,11 +53,9 @@ public class Qes6 {
 				default:
 					System.out.println("『 " + bucle + "』は指定の商品ではありません");	
 					break;
-
 			}
-			
-
 		}
+		
 	}
 
 }
