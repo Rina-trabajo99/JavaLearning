@@ -22,8 +22,6 @@ public class Qes6 {
 		sc.close();
 		String[] productList = search.split("、");
 		
-
-		
 		for(String bucle : productList) {
 			int tvdispAmount = 11;
 			int amount = bucle != items[5] || bucle != items[6] ? itemsNum : tvdispAmount;
