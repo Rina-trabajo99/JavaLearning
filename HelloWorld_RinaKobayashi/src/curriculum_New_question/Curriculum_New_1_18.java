@@ -6,71 +6,12 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Curriculum_New_1_18 {
-
-	public static void main(String[] args) {
-		// TODO 自動生成されたメソッド・スタブ
-		
-		// Q1：引数に文字列型と整数型をいれてコンソールに「Hello JavaSE 11」と出力するメソッドを作成してください。
-		Method.greet("JavaSE", 11);
-		
-		// Q2：引数に整数を渡すと渡した値同士を乗算しコンソールに出力するメソッドを作成してください
-		Method.msgQ2();
-		Scanner sc1 = new Scanner(System.in);
-		int num1 = sc1.nextInt();
-		Method.resultQ2(num1);
-	
-		// Q3：引数として整数の配列を渡すと、受け取った値を順番にコンソールに出力するメソッドを作成してください
-		Method.msgQ3();
-		Scanner sc2 = new Scanner(System.in);
-		String nums = sc2.nextLine();
-		Method.numList(nums);
-			
-		// Q4：Q2をオーバーロードして引数を小数2つに変更し、引数同士を和算しコンソールに出力してください。
-		Method.msgQ4a();
-		Scanner sc3 = new Scanner(System.in);
-		double dec1 = sc3.nextDouble();
-		
-		Method.msgQ4b();
-		double dec2 = sc3.nextDouble();
-		
-		Method.resultQ4(dec1, dec2);
-		
-		// Q5：引数に整数を渡すと、1～100までのランダムな数字を引数の回数分格納して
-		// 格納した値を順番にコンソールで出力後、格納した値を返すメソッドを作成してください。
-		// ※0は出力＆格納しないようにしてください。
-		Method.msgQ5();
-		int numTimes = sc1.nextInt();
-		Method.times(numTimes);
-	
-		// Q6：引数にQ5で作成したメソッドの返り値を受け取り、受け取った配列の要素の平均値をコンソールに出力するメソッドを作成してください。
-		// ※小数点以下も表示されるようにしてください。
-		Method.msgQ6();
-		
-		// Q7：引数にQ6で作成したメソッドの返り値を受け取り、受け取った値が50以上ならばtrueそれ以外はfalseを返しコンソールに出力してください
-		Method.msgQ7();
-		
-		
-		sc1.close();
-		sc2.close();
-		sc3.close();
-	}
-
-}
-
-class Method {
-	//メンバ変数
-	String name;
-	int num;
-	String str;
-	double first;
-	double second;
 	  //クラス全体で共有できるようにする
 	static double[] avr;
 	static double avrAdd;
 	static double avrCal;
 	static boolean check;
-	
-	
+		
 	//メソッド処理
 	//Q1
 	static void greet(String name, int num) {
@@ -86,7 +27,7 @@ class Method {
 		return num*num;
 	}
 	static void resultQ2(int num) {
-		System.out.println((num) + " ＊ " + (num) + " = " + Method.cal(num) + " です");
+		System.out.println((num) + " ＊ " + (num) + " = " + cal(num) + " です");
 	}
 
 	//Q3
@@ -160,11 +101,52 @@ class Method {
 			System.out.println("ランダム数値の和の平均が50以上のため、結果は「" + check + "」です");
 		}
 	}
+	public static void main(String[] args) {
+		// TODO 自動生成されたメソッド・スタブ
+		
+		// Q1：引数に文字列型と整数型をいれてコンソールに「Hello JavaSE 11」と出力するメソッドを作成してください。
+		greet("JavaSE", 11);
+		
+		// Q2：引数に整数を渡すと渡した値同士を乗算しコンソールに出力するメソッドを作成してください
+		msgQ2();
+		Scanner sc1 = new Scanner(System.in);
+		int num1 = sc1.nextInt();
+		resultQ2(num1);
 	
+		// Q3：引数として整数の配列を渡すと、受け取った値を順番にコンソールに出力するメソッドを作成してください
+		msgQ3();
+		Scanner sc2 = new Scanner(System.in);
+		String nums = sc2.nextLine();
+		numList(nums);
+			
+		// Q4：Q2をオーバーロードして引数を小数2つに変更し、引数同士を和算しコンソールに出力してください。
+		msgQ4a();
+		Scanner sc3 = new Scanner(System.in);
+		double dec1 = sc3.nextDouble();
+		
+		msgQ4b();
+		double dec2 = sc3.nextDouble();
+		
+		resultQ4(dec1, dec2);
+		
+		// Q5：引数に整数を渡すと、1～100までのランダムな数字を引数の回数分格納して
+		// 格納した値を順番にコンソールで出力後、格納した値を返すメソッドを作成してください。
+		// ※0は出力＆格納しないようにしてください。
+		msgQ5();
+		int numTimes = sc1.nextInt();
+		times(numTimes);
 	
-	
-	
-	
-	
-	
+		// Q6：引数にQ5で作成したメソッドの返り値を受け取り、受け取った配列の要素の平均値をコンソールに出力するメソッドを作成してください。
+		// ※小数点以下も表示されるようにしてください。
+		msgQ6();
+		
+		// Q7：引数にQ6で作成したメソッドの返り値を受け取り、受け取った値が50以上ならばtrueそれ以外はfalseを返しコンソールに出力してください
+		msgQ7();
+		
+		
+		sc1.close();
+		sc2.close();
+		sc3.close();
 	}
+
+}
