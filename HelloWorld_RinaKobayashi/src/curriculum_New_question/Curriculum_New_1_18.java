@@ -6,7 +6,8 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Curriculum_New_1_18 {
-	  //クラス全体で共有できるようにする
+	
+//クラス全体で共有できるようにする
 	static double[] avr;
 	static double avrAdd;
 	static double avrCal;
@@ -26,7 +27,7 @@ public class Curriculum_New_1_18 {
 	static int cal(int num) {
 		return num*num;
 	}
-	static void resultQ2(int num) {
+	static void result(int num) {
 		System.out.println((num) + " ＊ " + (num) + " = " + cal(num) + " です");
 	}
 
@@ -36,9 +37,9 @@ public class Curriculum_New_1_18 {
 		System.out.println("整数をいくつか記述してください。");
 		System.out.println("整数と整数の間は「、」で区切ってください：");
 	}
-	static void numList(String str) {
-		List<String> numSingle = Arrays.asList(str.split("、"));
-		System.out.println(numSingle);
+	static void numArray(String str) {
+		List<String> nums = Arrays.asList(str.split("、"));
+		System.out.println(nums);
 	}
 
 	//Q4
@@ -50,10 +51,10 @@ public class Curriculum_New_1_18 {
 		System.out.println();
 		System.out.println("もう一つ、好きな小数点を入力してください：");
 	}
-	static double cal(double first, double second) {
+	static double cal(double first, double second) { //Q2オーバーロード
 		return first + second;
 	}
-	static void resultQ4(double first, double second) {	
+	static void result(double first, double second) {	//Q2オーバーロード
 		System.out.println(first + " + " + second + " = " + String.format("%.2f",cal(first, second)) + " です");
 	}
 	
@@ -87,7 +88,7 @@ public class Curriculum_New_1_18 {
 		}
 		avrCal = avrAdd / avr.length;
 		System.out.println();
-		System.out.println("上記に表示させたランダム数値の和の平均は" + avrCal + "です");
+		System.out.println("上記に表示させたランダム数値の和の平均は" + String.format("%.2f",avrCal) + "です");
 	}
 
 	//Q7
@@ -103,37 +104,33 @@ public class Curriculum_New_1_18 {
 	}
 	public static void main(String[] args) {
 		// TODO 自動生成されたメソッド・スタブ
+		Scanner sc = new Scanner(System.in);
 		
 		// Q1：引数に文字列型と整数型をいれてコンソールに「Hello JavaSE 11」と出力するメソッドを作成してください。
 		greet("JavaSE", 11);
 		
 		// Q2：引数に整数を渡すと渡した値同士を乗算しコンソールに出力するメソッドを作成してください
 		msgQ2();
-		Scanner sc1 = new Scanner(System.in);
-		int num1 = sc1.nextInt();
-		resultQ2(num1);
+		int num1 = sc.nextInt();
+		result(num1);
 	
 		// Q3：引数として整数の配列を渡すと、受け取った値を順番にコンソールに出力するメソッドを作成してください
 		msgQ3();
-		Scanner sc2 = new Scanner(System.in);
-		String nums = sc2.nextLine();
-		numList(nums);
+		String nums = sc.next();
+		numArray(nums);
 			
 		// Q4：Q2をオーバーロードして引数を小数2つに変更し、引数同士を和算しコンソールに出力してください。
 		msgQ4a();
-		Scanner sc3 = new Scanner(System.in);
-		double dec1 = sc3.nextDouble();
-		
+		double dec1 = sc.nextDouble();
 		msgQ4b();
-		double dec2 = sc3.nextDouble();
-		
-		resultQ4(dec1, dec2);
+		double dec2 = sc.nextDouble();
+		result(dec1, dec2);
 		
 		// Q5：引数に整数を渡すと、1～100までのランダムな数字を引数の回数分格納して
 		// 格納した値を順番にコンソールで出力後、格納した値を返すメソッドを作成してください。
 		// ※0は出力＆格納しないようにしてください。
 		msgQ5();
-		int numTimes = sc1.nextInt();
+		int numTimes = sc.nextInt();
 		times(numTimes);
 	
 		// Q6：引数にQ5で作成したメソッドの返り値を受け取り、受け取った配列の要素の平均値をコンソールに出力するメソッドを作成してください。
@@ -144,9 +141,7 @@ public class Curriculum_New_1_18 {
 		msgQ7();
 		
 		
-		sc1.close();
-		sc2.close();
-		sc3.close();
+		sc.close();
 	}
 
 }
