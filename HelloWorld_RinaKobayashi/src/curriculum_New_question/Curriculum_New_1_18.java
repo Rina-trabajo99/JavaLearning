@@ -20,50 +20,27 @@ public class Curriculum_New_1_18 {
 	}
 	
 	//Q2
-	static void msgQ2()  {
-		System.out.println();
-		System.out.print("好きな整数を入力してください：");
-	}
-	static int cal(int num) {
-		return num*num;
-	}
 	static void result(int num) {
-		System.out.println((num) + " ＊ " + (num) + " = " + cal(num) + " です");
+		int cal = num * num;
+		System.out.println((num) + " ＊ " + (num) + " = " + cal + " です");
+		System.out.println();
 	}
 
 	//Q3
-	static void msgQ3() {
-		System.out.println();		
-		System.out.println("整数をいくつか記述してください。");
-		System.out.println("整数と整数の間は「、」で区切ってください：");
-	}
 	static void numArray(String str) {
 		List<String> nums = Arrays.asList(str.split("、"));
 		System.out.println(nums);
+		System.out.println();
 	}
 
 	//Q4
-	static void msgQ4a() {
-		System.out.println();
-		System.out.println("好きな小数点を一つ入力してください：");
-	}
-	static void msgQ4b() {
-		System.out.println();
-		System.out.println("もう一つ、好きな小数点を入力してください：");
-	}
-	static double cal(double first, double second) { //Q2オーバーロード
-		return first + second;
-	}
 	static void result(double first, double second) {	//Q2オーバーロード
-		System.out.println(first + " + " + second + " = " + String.format("%.2f",cal(first, second)) + " です");
+		double cal = first + second;
+		System.out.println(first + " + " + second + " = " + String.format("%.2f",cal) + " です");
+		System.out.println();
 	}
 	
 	//Q5
-	static void msgQ5() {
-		System.out.println();
-		System.out.println("1~100までのランダムな数字を好きな回数表示します");
-		System.out.println("表示させたい回数を指定してください");
-	}
 	static void times(int num) {
 		avr = new double[num];
 		if (num <= 0) {
@@ -102,6 +79,8 @@ public class Curriculum_New_1_18 {
 			System.out.println("ランダム数値の和の平均が50以上のため、結果は「" + check + "」です");
 		}
 	}
+	
+	
 	public static void main(String[] args) {
 		// TODO 自動生成されたメソッド・スタブ
 		Scanner sc = new Scanner(System.in);
@@ -110,26 +89,29 @@ public class Curriculum_New_1_18 {
 		greet("JavaSE", 11);
 		
 		// Q2：引数に整数を渡すと渡した値同士を乗算しコンソールに出力するメソッドを作成してください
-		msgQ2();
+		System.out.println();
+		System.out.print("好きな整数を入力してください：");
 		int num1 = sc.nextInt();
-		result(num1);
+		result(num1); //オーバーロード
 	
 		// Q3：引数として整数の配列を渡すと、受け取った値を順番にコンソールに出力するメソッドを作成してください
-		msgQ3();
+		System.out.println("整数をいくつか記述してください。");
+		System.out.print("整数と整数の間は「、」で区切ってください：");
 		String nums = sc.next();
 		numArray(nums);
 			
 		// Q4：Q2をオーバーロードして引数を小数2つに変更し、引数同士を和算しコンソールに出力してください。
-		msgQ4a();
+		System.out.println("好きな小数点を一つ入力してください：");
 		double dec1 = sc.nextDouble();
-		msgQ4b();
+		System.out.println("もう一つ、好きな小数点を入力してください：");
 		double dec2 = sc.nextDouble();
-		result(dec1, dec2);
+		result(dec1, dec2); //オーバーロード
 		
 		// Q5：引数に整数を渡すと、1～100までのランダムな数字を引数の回数分格納して
 		// 格納した値を順番にコンソールで出力後、格納した値を返すメソッドを作成してください。
 		// ※0は出力＆格納しないようにしてください。
-		msgQ5();
+		System.out.println("1~100までのランダムな数字を好きな回数表示します");
+		System.out.println("表示させたい回数を指定してください");
 		int numTimes = sc.nextInt();
 		times(numTimes);
 	
@@ -139,7 +121,6 @@ public class Curriculum_New_1_18 {
 		
 		// Q7：引数にQ6で作成したメソッドの返り値を受け取り、受け取った値が50以上ならばtrueそれ以外はfalseを返しコンソールに出力してください
 		msgQ7();
-		
 		
 		sc.close();
 	}
